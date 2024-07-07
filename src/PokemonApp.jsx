@@ -18,11 +18,13 @@ export const PokemonApp = () => {
         <ul>
             {
               pokemons.map((pokemon) => (
-                <li key={pokemon.id}>{pokemon.name}</li>
+                <li key={pokemon.name}>{pokemon.name}</li>
               ))
             }
         </ul>
-        <button onClick={()=>dispatch(getPokemons(page)) }>Next</button>
+        <button 
+        disabled = {isLoading}
+        onClick={()=>dispatch(getPokemons(page)) }>Next</button>
     </>
   )
 }
